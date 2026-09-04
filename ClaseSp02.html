@@ -11,10 +11,16 @@
             padding: 0;
         }
         body {
-            background-color: #37353E;
+            background-color: #27252E;
         }
         a {
-            color: #D3DAD9;
+            color: #D2DAD9;
+        }
+        p {
+            color: #D2DAD9;
+        }
+        h2 {
+            color: white;
         }
         .menu {
             text-decoration: none;
@@ -28,6 +34,32 @@
 
         .menu-item:hover {
             background-color: #715A5A;
+        }
+
+        nav {
+            display: flex;
+            flex-direction:row;
+            background-color: #44444E;
+            justify-content: space-evenly;
+            flex-wrap: nowrap;
+            align-items: stretch;
+            flex-shrink: 1;
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+
+        @media (max-width: 500px) {
+            nav {
+                flex-direction: column;
+            }
+            main {
+                display: grid;
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -49,5 +81,23 @@
             </a>
         </div>
     </nav>
+
+    <main>
+        <section>
+            <h2 id="electronica">Electronica</h2>
+            <p><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, fugit corrupti! Dignissimos molestias, sapiente mollitia architecto distinctio cumque iusto deleniti doloremque perferendis ad. At est earum natus quae nostrum excepturi.</span><span>Asperiores, unde magnam quis earum quam aut dolor officiis hic dolorem illum tempore ipsa quia voluptate exercitationem. Odio voluptates, dolor sit sapiente, excepturi exercitationem velit incidunt, ratione sed illo amet?</span><span>Reprehenderit perferendis ipsum deserunt! Voluptates, quod. Ea, praesentium minima aut corrupti quos facere sint eaque necessitatibus error omnis illum tenetur reiciendis velit quo commodi modi maxime. Atque quidem est eum.</span></p>
+        </section>
+        <section>
+            <h2 id="cocina">Cocina</h2>
+            <p><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem et itaque numquam velit, illum sequi voluptatem at vero error officia placeat beatae tempore iure expedita animi voluptate voluptates totam assumenda?</span><span>Temporibus explicabo error quae illum aut ea fugit, vel ex corporis, cupiditate, totam at quis expedita architecto! Nulla officia, ut nisi quam sed quo labore alias, rem ducimus quidem quia.</span><span>Laborum doloremque ipsam perferendis, at deleniti aliquam aperiam expedita sit minus enim, cum quas quidem nobis molestiae tempora corporis temporibus dolor similique, quibusdam eligendi facere explicabo exercitationem cupiditate ab. Expedita?</span></p>
+        </section>
+        <section>
+            <p><span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet similique veniam dignissimos harum, totam vitae nemo quidem, eveniet fugiat rerum eligendi optio quia soluta. Vitae corporis sunt voluptatem magni hic.</span><span>Tempora autem et natus neque velit ipsa vero, earum cupiditate, mollitia accusamus praesentium. Error consectetur accusamus tempora vitae ullam autem libero nam. Neque natus, ipsa sint eius esse harum assumenda?</span><span>Aperiam placeat sunt, aspernatur reiciendis porro est quod, rem inventore illo sint quis maxime tempora aliquid distinctio? Iusto nobis nihil doloremque assumenda natus exercitationem rerum quas nisi, beatae aut veniam.</span></p>
+        </section>
+        <section>
+            <h2 id="herramientas">Herramientas</h2>
+            <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum accusamus fugiat mollitia molestiae consectetur eius animi exercitationem? Nam et sed aut, perspiciatis, quidem assumenda doloremque harum iusto mollitia distinctio repellendus.</span><span>Corporis beatae iste assumenda cum explicabo, sunt voluptate magni ut eaque voluptates expedita porro animi quam saepe vel voluptas aliquam illum quae. Error, sint. Repellat voluptas iusto nisi eum ea.</span><span>Quis maiores, vero deleniti quos voluptatem explicabo quo neque quas? Nam mollitia deleniti ex modi doloremque, aperiam eos ipsam labore in eaque laudantium illo voluptatibus possimus magnam facilis cupiditate fugit?</span></p>
+        </section>
+    </main>
 </body>
 </html>
