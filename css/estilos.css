@@ -1,0 +1,35 @@
+header {
+    background-color: #183d2b;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.enlaces {
+    display: flex;
+    gap: 45px;
+}
+
+.enlaces a {
+    color: white;
+    text-decoration: none;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: #10271c;
+
+    padding: 15px 8%;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+}
+
+.logo {
+    color: white;
+}
