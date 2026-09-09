@@ -90,6 +90,17 @@ header h1 {
     transition: 0.5s;
 }
 
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .noticia {
     background-color: white;
 
@@ -104,6 +115,8 @@ header h1 {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+
+    animation: aparecer 0.8s linear;
 }
 
 
@@ -118,4 +131,66 @@ header h1 {
 
 .noticia:hover img {
     transform: scale(1.08);
+}
+
+@keyframes rebotarYAparecer {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: translateY(-10px); /* Sube de más para el efecto rebote */
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);    /* Se asienta en su lugar */
+    }
+}
+
+.noticia{
+    animation: rebotarYAparecer 0.8s ease;
+}
+
+.principal {
+    width: 85%;
+    max-width: 1200px;
+    margin: 50px auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    background-color: #183d2b;
+    color: white;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.principal img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.principal-texto {
+    padding: 50px;
+}
+
+.principal-texto h2 {
+    font-size: 2.5rem;
+    margin: 20px 0;
+}
+
+.principal a {
+    text-decoration: none;
+    color: wheat;
+}
+
+.principal a:hover {
+    color: orange;
+    display: inline-block;
+    transform: scale(1.1);
+    transition: 0.3s;
 }
