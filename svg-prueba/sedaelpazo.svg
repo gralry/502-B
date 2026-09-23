@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+    <polygon points="30,40 370,40 200,330" fill="#fff" stroke="#d92b2b" stroke-width="25" stroke-linejoin="round" />
+    <text x="200" y="90" text-anchor="middle" dominant-baseline="central"
+      font-family="Arial, sans-serif" font-weight="bolder" font-size="44"
+      fill="#000000">
+        CEDA
+    </text>
+    <text x="200" y="135" text-anchor="middle" dominant-baseline="central"
+      font-family="Arial, sans-serif" font-weight="bolder" font-size="44"
+      fill="#000000">
+        EL
+    </text>
+    <text x="200" y="180" text-anchor="middle" dominant-baseline="central"
+      font-family="Arial, sans-serif" font-weight="bolder" font-size="44"
+      fill="#000000">
+        PASO
+    </text>
+</svg>
