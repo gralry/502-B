@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archivo del Cine Clásico Universal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    
+    <header id="site-header">
+        <div class="header-container">
+            <a href="#" class="brand-title">CineClásico<span>.db</span></a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#hero" class="nav-link active">Inicio</a></li>
+                    <li><a href="#catalog" class="nav-link">Catálogo</a></li>
+                    <li><a href="#featured" class="nav-link">Destacadas</a></li>
+                    <li><a href="#about" class="nav-link">Historia</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="btn btn-secondary">Buscar</button>
+                <button class="btn btn-primary">Mi Colección</button>
+            </div>
+        </div>
+    </header>
+
+    
+    <section id="hero" class="hero-banner">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-tag">Archivo Histórico Cinematográfico</span>
+            <h1 class="hero-title">Grandes Obras Maestras del Séptimo Arte</h1>
+            <p class="hero-subtitle">
+                Una travesía visual por los filmes que definieron el lenguaje narrativo, la dirección de arte y la banda sonora de la historia del cine.
+            </p>
+            <p class="hero-description">
+                Desde el expresionismo mudo de los años 20 hasta la revolución del color y la ciencia ficción de culto. Explora fichas técnicas, géneros y calificaciones verificadas.
+            </p>
+            <div class="hero-buttons">
+                <a href="#catalog" class="btn btn-primary btn-large">Explorar Catálogo</a>
+                <a href="#about" class="btn btn-outline btn-large">Saber Más</a>
+            </div>
+        </div>
+    </section>
+
+    
+    <main id="main-content">
+        
+        <section id="catalog" class="catalog-section">
+            <div class="section-header">
+                <h2 class="section-title">Catálogo Principal de Películas</h2>
+                <p class="tagline">Fichas de obras restauradas en alta definición</p>
+            </div>
+
+            
+            <div class="catalog-grid">
+
+                
+                <article class="movie-card featured" data-genre="romance" data-rating="9.2" data-year="1942">
+                    <div class="card-media">
+                        <div class="card-badge">Clásico Imperdible</div>
+                        <div class="card-poster poster-casablanca"></div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="genre-tag">Drama / Romance</span>
+                            <span class="rating-badge">★ 9.2</span>
+                        </div>
+                        <h3 class="movie-title">Casablanca</h3>
+                        <p class="movie-director">Dirigida por <strong>Michael Curtiz</strong> (1942)</p>
+                        <p class="movie-synopsis">
+                            En el Marruecos de la Segunda Guerra Mundial, el propietario de un club nocturno debe decidir si ayuda a su antiguo amor y a su esposo a ponerse a salvo.
+                        </p>
+                        <div class="card-footer">
+                            <span class="runtime">102 min</span>
+                            <button class="btn btn-card">Ver Ficha</button>
+                        </div>
+                    </div>
+                </article>
+
+                
+                <article class="movie-card" data-genre="sci-fi" data-rating="8.3" data-year="1927">
+                    <div class="card-media">
+                        <div class="card-badge">Expresionismo Mudo</div>
+                        <div class="card-poster poster-metropolis"></div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="genre-tag">Sci-Fi / Silente</span>
+                            <span class="rating-badge">★ 8.3</span>
+                        </div>
+                        <h3 class="movie-title">Metrópolis</h3>
+                        <p class="movie-director">Dirigida por <strong>Fritz Lang</strong> (1927)</p>
+                        <p class="movie-synopsis">
+                            En un futuro distópico dividido entre pensadores y trabajadores, el hijo del gobernante de la ciudad se enamora de una líder de la clase trabajadora.
+                        </p>
+                        <div class="card-footer">
+                            <span class="runtime">153 min</span>
+                            <button class="btn btn-card">Ver Ficha</button>
+                        </div>
+                    </div>
+                </article>
+
+                
+                <article class="movie-card" data-genre="drama" data-rating="8.9" data-year="1941">
+                    <div class="card-media">
+                        <div class="card-badge">Innovación Técnica</div>
+                        <div class="card-poster poster-kane"></div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="genre-tag">Drama / Misterio</span>
+                            <span class="rating-badge">★ 8.9</span>
+                        </div>
+                        <h3 class="movie-title">Ciudadano Kane</h3>
+                        <p class="movie-director">Dirigida por <strong>Orson Welles</strong> (1941)</p>
+                        <p class="movie-synopsis">
+                            Tras la muerte de un poderoso magnate de los medios de comunicación, un grupo de periodistas intenta descifrar el significado de sus últimas palabras: "Rosebud".
+                        </p>
+                        <div class="card-footer">
+                            <span class="runtime">119 min</span>
+                            <button class="btn btn-card">Ver Ficha</button>
+                        </div>
+                    </div>
+                </article>
+
+                
+                <article class="movie-card featured" data-genre="sci-fi" data-rating="9.0" data-year="1968">
+                    <div class="card-media">
+                        <div class="card-badge">Cine de Culto</div>
+                        <div class="card-poster poster-2001"></div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="genre-tag">Sci-Fi / Filosófico</span>
+                            <span class="rating-badge">★ 9.0</span>
+                        </div>
+                        <h3 class="movie-title">2001: Odisea del Espacio</h3>
+                        <p class="movie-director">Dirigida por <strong>Stanley Kubrick</strong> (1968)</p>
+                        <p class="movie-synopsis">
+                            Una enigmática estructura influye en la evolución humana antes de que una nave espacial sea enviada a Júpiter bajo el control de la inteligencia artificial HAL 9000.
+                        </p>
+                        <div class="card-footer">
+                            <span class="runtime">149 min</span>
+                            <button class="btn btn-card">Ver Ficha</button>
+                        </div>
+                    </div>
+                </article>
+
+                
+                <article class="movie-card" data-genre="musical" data-rating="8.3" data-year="1952">
+                    <div class="card-media">
+                        <div class="card-badge">Era Dorada</div>
+                        <div class="card-poster poster-singin"></div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="genre-tag">Musical / Comedia</span>
+                            <span class="rating-badge">★ 8.3</span>
+                        </div>
+                        <h3 class="movie-title">Cantar bajo la lluvia</h3>
+                        <p class="movie-director">Dirigida por <strong>Gene Kelly & Stanley Donen</strong> (1952)</p>
+                        <p class="movie-synopsis">
+                            Una compañía de producción cinematográfica y sus estrellas hacen la difícil transición del cine mudo al sonoro en Hollywood a finales de los años 20.
+                        </p>
+                        <div class="card-footer">
+                            <span class="runtime">103 min</span>
+                            <button class="btn btn-card">Ver Ficha</button>
+                        </div>
+                    </div>
+                </article>
+
+                
+                <article class="movie-card featured" data-genre="drama" data-rating="9.2" data-year="1972">
+                    <div class="card-media">
+                        <div class="card-badge">Obra Cumbre</div>
+                        <div class="card-poster poster-godfather"></div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="genre-tag">Policial / Drama</span>
+                            <span class="rating-badge">★ 9.2</span>
+                        </div>
+                        <h3 class="movie-title">El Padrino</h3>
+                        <p class="movie-director">Dirigida por <strong>Francis Ford Coppola</strong> (1972)</p>
+                        <p class="movie-synopsis">
+                            El envejecido patriarca de una dinastía familiar transfiere el control de su organización a su reacio hijo menor.
+                        </p>
+                        <div class="card-footer">
+                            <span class="runtime">175 min</span>
+                            <button class="btn btn-card">Ver Ficha</button>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+    </main>
+
+    
+    <footer id="site-footer">
+        <div class="footer-content">
+            <p>&copy; 2026 Archivo del Cine Clásico. Práctica Académica de CSS3 Avanzado.</p>
+            <p class="footer-links">
+                <a href="#">Aviso Legal</a> | <a href="#">Documentación MDN</a> | <a href="#">W3C Selectors</a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
