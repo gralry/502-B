@@ -4,26 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Archivo del Cine Clásico Universal</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="bootstrap-6.0.0-alpha.1-dist/css/bootstrap.min.css">
 </head>
 <body>
 
     
-    <header id="site-header">
-        <div class="header-container">
-            <a href="#" class="brand-title">CineClásico<span>.db</span></a>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="#hero" class="nav-link active">Inicio</a></li>
-                    <li><a href="#catalog" class="nav-link">Catálogo</a></li>
-                    <li><a href="#featured" class="nav-link">Destacadas</a></li>
-                    <li><a href="#about" class="nav-link">Historia</a></li>
-                </ul>
-            </nav>
-            <div class="header-actions">
-                <button class="btn btn-secondary">Buscar</button>
-                <button class="btn btn-primary">Mi Colección</button>
-            </div>
+    <header id="site-header"  class="navbar md:navbar-expand bg-1">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">CineClásico</a>
+            <button class="btn-icon navbar-toggler" type="button" data-bs-toggle="drawer" data-bs-target="#navbarDrawer" aria-controls="navbarDrawer" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon" aria-hidden="true"></span>
+              </button>
+              <dialog class="drawer drawer-end" tabindex="-1" id="navbarDrawer" aria-labelledby="navbarDrawerLabel">
+                <div class="drawer-header">
+                  <h5 class="drawer-title" id="navbarDrawerLabel">Menu</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="drawer" aria-label="Close"></button>
+                </div>
+                <div class="drawer-body mb-2 md:mb-0">
+                  <ul class="nav navbar-nav me-auto">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Catalogo</a>
+                    </li>
+                    <li class="nav-item">
+                      <button class="nav-link" type="button" data-bs-toggle="menu" aria-expanded="false">
+                        Destacados
+                      </button>
+                      <div class="menu">
+                        <a class="menu-item" href="#">Action</a>
+                        <a class="menu-item" href="#">Another action</a>
+                        <hr class="menu-divider">
+                        <a class="menu-item" href="#">Something else here</a>
+                      </div>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link disabled" aria-disabled="true">Historia</a>
+                    </li>
+                  </ul>
+                  <form class="hstack gap-2" role="search">
+                    <input class="form-control" type="search" placeholder="Search" aria-label="Search"/>
+                    <button class="btn-solid btn-icon theme-secondary" type="submit">
+                      <svg class="bi" width="16" height="16"><use href="#search" /></svg>
+                    </button>
+                  </form>
+                </div>
+              </dialog>
         </div>
     </header>
 
@@ -63,7 +90,7 @@
                     <div class="card-media">
                         <div class="card-badge">Clásico Imperdible</div>
                         <div class="card-poster poster-casablanca">
-                            <img src="assets/casablancaPoster.jpg" alt="Casa Blanca Poster"></img>
+                            <img src="images/odisea.png" width="350px">
                         </div>
                     </div>
                     <div class="card-body">
@@ -87,9 +114,7 @@
                 <article class="movie-card" data-genre="sci-fi" data-rating="8.3" data-year="1927">
                     <div class="card-media">
                         <div class="card-badge">Expresionismo Mudo</div>
-                        <div class="card-poster poster-metropolis">
-                            <img src="assets/Metropolis.png" alt="Metropolis">
-                        </div>
+                        <div class="card-poster poster-metropolis"></div>
                     </div>
                     <div class="card-body">
                         <div class="card-meta">
@@ -112,9 +137,7 @@
                 <article class="movie-card" data-genre="drama" data-rating="8.9" data-year="1941">
                     <div class="card-media">
                         <div class="card-badge">Innovación Técnica</div>
-                        <div class="card-poster poster-kane">
-                            <img src="assets/citizenKane.jpg" alt="Citizen Kane">
-                        </div>
+                        <div class="card-poster poster-kane"></div>
                     </div>
                     <div class="card-body">
                         <div class="card-meta">
@@ -137,9 +160,7 @@
                 <article class="movie-card featured" data-genre="sci-fi" data-rating="9.0" data-year="1968">
                     <div class="card-media">
                         <div class="card-badge">Cine de Culto</div>
-                        <div class="card-poster poster-2001">
-                            <img src="assets/spaceOdyssey.png" alt="Space Odyssey">
-                        </div>
+                        <div class="card-poster poster-2001"></div>
                     </div>
                     <div class="card-body">
                         <div class="card-meta">
@@ -147,7 +168,7 @@
                             <span class="rating-badge">★ 9.0</span>
                         </div>
                         <h3 class="movie-title">2001: Odisea del Espacio</h3>
-                        <p class="movie-director">Dirigida por <strong>Stanley Kainer a explicit height or min-height (such as height: 100vh or min-height: ubrick</strong> (1968)</p>
+                        <p class="movie-director">Dirigida por <strong>Stanley Kubrick</strong> (1968)</p>
                         <p class="movie-synopsis">
                             Una enigmática estructura influye en la evolución humana antes de que una nave espacial sea enviada a Júpiter bajo el control de la inteligencia artificial HAL 9000.
                         </p>
@@ -162,9 +183,7 @@
                 <article class="movie-card" data-genre="musical" data-rating="8.3" data-year="1952">
                     <div class="card-media">
                         <div class="card-badge">Era Dorada</div>
-                        <div class="card-poster poster-singin">
-                            <img src="assets/singingInTheRain.jpg" alt="Singing in the rain">
-                        </div>
+                        <div class="card-poster poster-singin"></div>
                     </div>
                     <div class="card-body">
                         <div class="card-meta">
@@ -187,9 +206,7 @@
                 <article class="movie-card featured" data-genre="drama" data-rating="9.2" data-year="1972">
                     <div class="card-media">
                         <div class="card-badge">Obra Cumbre</div>
-                        <div class="card-poster poster-godfather">
-                            <img src="assets/Godfather_logo.svg.webp" alt="Goodfaather">
-                        </div>
+                        <div class="card-poster poster-godfather"></div>
                     </div>
                     <div class="card-body">
                         <div class="card-meta">
