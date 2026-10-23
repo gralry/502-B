@@ -163,7 +163,7 @@ button:hover {
 
 .catalog-grid{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
 }
 
@@ -177,32 +177,6 @@ button:hover {
     border: 1px solid var(--green);
 }
 
-.rating-badge{
-    color: yellow;
-}
-
-.genre-tag {
-    background-color:rgb(138, 138, 138);
-    padding: 5px 10px;
-    border-radius: 8px;
-}
-
-.genre-tag:hover{
-    background-color: var(--surface-soft);
-}
-
-.card-media {
-    min-width: 400px;
-    min-height: 400px;
-}
-
-.card-poster {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 400px;
-    object-fit: cover;
-}
 @media (max-width: 1200px){
    
     .main-nav > ul {
@@ -220,7 +194,7 @@ button:hover {
     }
     .main-nav > ul {
         display: grid;
-        grid-template-columns: repeat(auto, 1fr);
+        grid-template-columns: repeat(1, 1fr);
     }
 
 
@@ -229,13 +203,28 @@ button:hover {
         grid-template-columns: repeat(1, 1fr);
         gap: 1rem;
     }
+}
 
-    #site-header {
-        position: inherit;
-    }
+.rating-badge{
+    color: yellow;
 
-    .card-media {
-        min-width: 400px;
-        min-height: 400px;
-    }
+}
+.genre-tag{
+    background-color: var(--green);
+    padding: 5px 10px;
+}
+.genre-tag:hover{
+    background-color: var(--surface-soft);
+}
+.card-body{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.card-media{
+    min-width: 400px;
+    min-height: 400px;
+}
+#site-header{
+    position: inherit;
 }
