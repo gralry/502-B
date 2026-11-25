@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Kontra.js - Ejercicio 3</title>
+    <style>
+      body {
+        background-color: #1a1a1a;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      canvas {
+        border: 2px solid #ffffff;
+        background-color: #000000;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="game" width="600" height="400"></canvas>
+
+    <script src="https://unpkg.com/kontra@10.0.1/kontra.min.js"></script>
+
+    <script>
+      // 1. Inicializar Kontra y el módulo de teclado
+      let { canvas, context } = kontra.init();
+      kontra.initKeys();
+
+      // 2. Crear al jugador en el centro
+      let jugador = kontra.Sprite({
+        x: canvas.width / 2 - 20,
+        y: canvas.height / 2 - 20,
+        width: 40,
+        height: 40,
+        color: "#4ade80", // Verde brillante
+        velocidad: 4, // Incremento
+      });
+
+      // 3. Bucle de juego
+      let loop = kontra.GameLoop({
+        update: function () {
+          // Movemos al jugador según las teclas presionadas
+          if (kontra.keyPressed("arrowleft") || kontra.keyPressed("a")) {
+            jugador.x -= jugador.velocidad;
+          }
+          if (kontra.keyPressed("arrowright") || kontra.keyPressed("d")) {
+            jugador.x += jugador.velocidad;
+          }
+          if (kontra.keyPressed("arrowup") || kontra.keyPressed("w")) {
+            jugador.y -= jugador.velocidad;
+          }
+          if (kontra.keyPressed("arrowdown") || kontra.keyPressed("s")) {
+            jugador.y += jugador.velocidad;
+          }
+
+          // Evitar que salga de los límites del canvas (Colisión con bordes)
+          if (jugador.x < 0) {
+            jugador.x = 0;
+          }
+          if (jugador.x + jugador.width > canvas.width) {
+            jugador.x = canvas.width - jugador.width;
+          }
+          if (jugador.y < 0) {
+            jugador.y = 0;
+          }
+          if (jugador.y + jugador.height > canvas.height) {
+            jugador.y = canvas.height - jugador.height;
+          }
+
+          jugador.update();
+        },
+        render: function () {
+          jugador.render();
+        },
+      });
+
+      loop.start();
+    </script>
+  </body>
+</html>

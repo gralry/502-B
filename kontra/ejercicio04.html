@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Kontra.js - Ejercicio 4</title>
+    <style>
+      body {
+        background-color: #1a1a1a;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      canvas {
+        border: 2px solid #ffffff;
+        background-color: #000000;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="game" width="600" height="400"></canvas>
+
+    <script src="https://unpkg.com/kontra@10.0.1/kontra.min.js"></script>
+
+    <script>
+      // Inicializar Kontra y el teclado
+      let { canvas, context } = kontra.init();
+      kontra.initKeys();
+
+      // Crear al jugador con físicas
+      let jugador = kontra.Sprite({
+        x: canvas.width / 2 - 20,
+        y: 50, // Empieza arriba para verlo caer al iniciar
+        width: 40,
+        height: 40,
+        color: "#facc15", // Amarillo
+        dy: 0, // Velocidad vertical inicial
+        ddy: 0.4, // Gravedad: acelera 0.4px/frame hacia abajo
+        enElSuelo: false, // Estado para controlar el salto
+      });
+
+      // Bucle de juego
+      let loop = kontra.GameLoop({
+        update: function () {
+          // Movimiento horizontal básico (izquierda / derecha)
+          if (kontra.keyPressed("arrowleft") || kontra.keyPressed("a")) {
+            jugador.x -= 4;
+          }
+          if (kontra.keyPressed("arrowright") || kontra.keyPressed("d")) {
+            jugador.x += 4;
+          }
+
+          // Salto: si está tocando el suelo
+          if (
+            (kontra.keyPressed("space") ||
+              kontra.keyPressed("arrowup") ||
+              kontra.keyPressed("w")) &&
+            jugador.enElSuelo
+          ) {
+            jugador.dy = -13; // Impulso fuerte hacia arriba
+            jugador.enElSuelo = false; // Ya no está en el suelo
+          }
+
+          // Kontra aplica automáticamente: dy += ddy, y luego y += dy
+          jugador.update();
+
+          // Detección de suelo (borde inferior del canvas)
+          let sueloY = canvas.height - jugador.height;
+
+          if (jugador.y >= sueloY) {
+            jugador.y = sueloY; // Evita que atraviese el suelo
+            jugador.dy = 0; // Detiene la velocidad de caída
+            jugador.enElSuelo = true; // Permite volver a saltar
+          }
+
+          // Límites laterales
+          if (jugador.x < 0) jugador.x = 0;
+          if (jugador.x + jugador.width > canvas.width) {
+            jugador.x = canvas.width - jugador.width;
+          }
+        },
+        render: function () {
+          jugador.render();
+        },
+      });
+
+      loop.start();
+    </script>
+  </body>
+</html>

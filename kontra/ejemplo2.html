@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Kontra.js - Ejercicio 2</title>
+    <style>
+      /* Centrar el lienzo y fondo oscuro  */
+      body {
+        background-color: #1a1a1a;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      canvas {
+        border: 2px solid #ffffff;
+        background-color: #000000;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="game" width="600" height="400"></canvas>
+
+    <script src="https://unpkg.com/kontra@10.0.1/kontra.min.js"></script>
+
+    <script>
+      //   Inicializar Kontra
+      let { canvas, context } = kontra.init();
+
+      //  Crear el Sprite con velocidad horizontal (dx)
+      let cuadrado = kontra.Sprite({
+        x: 0, // Empieza en el borde izquierdo
+        y: canvas.height / 2 - 25, // Centrar verticalmente
+        width: 50,
+        height: 50,
+        color: "purple",
+        dx: 2, // Velocidad: se moverá 2 píxeles por cada fotograma
+        dy: 1, // Velocidad: se moverá 1 píxeles por cada fotograma
+      });
+
+      // Bucle de Juego (Game Loop)
+      let loop = kontra.GameLoop({
+        update: function () {
+          // Actualiza la posición del sprite usando su velocidad (x += dx)
+          cuadrado.update();
+
+          // Si el cuadrado sale completamente por el borde derecho
+          if ((cuadrado.x > canvas.width - cuadrado.width) && (cuadrado.dx > 0) ) {
+            cuadrado.dx = -cuadrado.dx;
+          }
+          if ((cuadrado.y > canvas.height - cuadrado.height) && (cuadrado.dy > 0)){
+            cuadrado.dy = -cuadrado.dy;
+          }
+          if ((cuadrado.x < 0) && (cuadrado.dx < 0) ) {
+            cuadrado.dx = -cuadrado.dx;
+          }
+          if ((cuadrado.y < 0) && (cuadrado.dy < 0)){
+            cuadrado.dy = -cuadrado.dy;
+          }
+        },
+        render: function () {
+          // Dibuja el sprite en su nueva posición
+          cuadrado.render();
+        },
+      });
+
+      // Iniciar el bucle
+      loop.start();
+    </script>
+  </body>
+</html>

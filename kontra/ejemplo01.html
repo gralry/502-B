@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ejercicio 1</title>
+    <style>
+      /* Centrar el lienzo y fondo oscuro  */
+      body {
+        background-color: #1a1a1a;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      canvas {
+        border: 2px solid #ffffff;
+        background-color: #000000;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 1. Lienzo  -->
+    <canvas id="game" width="600" height="400"></canvas>
+
+    <!-- Importar Kontra.js-->
+    <script src="https://unpkg.com/kontra@10.0.1/kontra.min.js"></script>
+
+    <!-- Código  -->
+    <script>
+      // Paso 1: Inicializar Kontra
+      let { canvas, context } = kontra.init("game");
+
+      // Paso 2: Crear el Sprite
+      let cuadrado = kontra.Sprite({
+        x: canvas.width / 2 - 25, // Centrado horizontalmente
+        y: canvas.height / 2 - 25, // Centrado verticalmente
+        width: 50, // Ancho de 50px
+        height: 50, // Alto de 50px
+        color: "red", // Color de relleno
+      });
+
+      // Paso 3: Dibujar el Sprite en pantalla
+      cuadrado.render();
+    </script>
+  </body>
+</html>
